@@ -3,7 +3,7 @@
 ![ak-php-funpay-sms-parser](https://user-images.githubusercontent.com/1849174/42195292-ec2e0330-7e80-11e8-9069-6046946ccb25.png)
 
 <p align="center">
-<a href="https://travis-ci.org/a-komarev/php-funpay-sms-parser"><img src="https://img.shields.io/travis/a-komarev/php-funpay-sms-parser/master.svg?style=flat-square" alt="Build Status"></a>
+<a href="https://travis-ci.org/antonkomarev/php-funpay-sms-parser"><img src="https://img.shields.io/travis/antonkomarev/php-funpay-sms-parser/master.svg?style=flat-square" alt="Build Status"></a>
 <a href="https://styleci.io/repos/139517157"><img src="https://styleci.io/repos/139517157/shield" alt="StyleCI"></a>
 </p>
 
@@ -40,7 +40,7 @@ $ composer install antonkomarev/php-funpay-sms-parser
 Clone or download project from [PHP FunPay SMS Parser git repository](https://github.com/a-komarev/php-funpay-sms-parser).
 
 ```sh
-$ git clone git@github.com:a-komarev/php-funpay-sms-parser.git && cd ./php-funpay-sms-parser
+$ git clone git@github.com:antonkomarev/php-funpay-sms-parser.git && cd ./php-funpay-sms-parser
 ```
 
 Generate class autoload file and install PHPUnit.
@@ -113,7 +113,7 @@ $ vendor/bin/phpunit
 
 ## Author
 
-| <a href="https://github.com/a-komarev">![@a-komarev](https://avatars.githubusercontent.com/u/1849174?s=110)<br />Anton Komarev</a> |
+| <a href="https://github.com/antonkomarev">![@antonkomarev](https://avatars.githubusercontent.com/u/1849174?s=110)<br />Anton Komarev</a> |
 | :---: |
 
 ## License
