@@ -1,6 +1,15 @@
 {
   "name": "antonkomarev/php-funpay-sms-parser",
+  "description": "FunPay Transaction Verification SMS Parser written for contrived emulator.",
   "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "verification",
+    "transaction",
+    "parser",
+    "sms",
+    "pin"
+  ],
   "authors": [
     {
       "name": "Anton Komarev",
@@ -9,6 +18,14 @@
       "role": "Developer"
     }
   ],
+  "homepage": "https://github.com/antonkomarev/php-funpay-sms-parser",
+  "support": {
+    "email": "a.komarev@cybercog.su",
+    "issues": "https://github.com/antonkomarev/php-funpay-sms-parser/issues",
+    "wiki": "https://github.com/antonkomarev/php-funpay-sms-parser/wiki",
+    "source": "https://github.com/antonkomarev/php-funpay-sms-parser",
+    "docs": "https://github.com/antonkomarev/php-funpay-sms-parser/wiki"
+  },
   "require": {
     "php": "^7.1"
   },
@@ -24,5 +41,10 @@
     "psr-4": {
       "AK\\Tests\\FunPay\\SmsParser\\": "tests/"
     }
-  }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable" : true
 }
