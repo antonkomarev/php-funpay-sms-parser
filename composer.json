@@ -1,0 +1,28 @@
+{
+  "name": "antonkomarev/php-funpay-sms-parser",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Anton Komarev",
+      "email": "a.komarev@cybercog.su",
+      "homepage": "http://ell.folio.su",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "AK\\FunPay\\SmsParser\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AK\\Tests\\FunPay\\SmsParser\\": "tests/"
+    }
+  }
+}
