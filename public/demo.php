@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once(__DIR__ . '/../vendor/autoload.php');
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use AK\FunPay\SmsParser\Exceptions\MoneyAmountNotFound;
 use AK\FunPay\SmsParser\Exceptions\PinNotFound;

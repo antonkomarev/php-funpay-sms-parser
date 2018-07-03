@@ -95,6 +95,6 @@ class Parser
     {
         $amount = str_replace(',', '.', $amount);
 
-        return (float)$amount;
+        return (float) $amount;
     }
 }
