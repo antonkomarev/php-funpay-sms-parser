@@ -34,7 +34,7 @@
   },
   "autoload": {
     "psr-4": {
-      "AK\\FunPay\\SmsParser\\": "app/"
+      "AK\\FunPay\\SmsParser\\": "src/"
     }
   },
   "autoload-dev": {
