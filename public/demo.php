@@ -34,7 +34,6 @@ try {
     echo "Номер кошелька: {$account}\n";
     echo "Сумма для перевода: {$moneyAmount}\n";
     echo "Пин-код: {$pin}\n";
-
 } catch (YandexAccountNotFound $exception) {
     echo 'В SMS сообщении отсутствует номер кошелька Яндекс Деньги.';
 } catch (MoneyAmountNotFound $exception) {
