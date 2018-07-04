@@ -17,39 +17,50 @@ use AK\FunPay\SmsParser\Exceptions\MoneyAmountNotFound;
 use AK\FunPay\SmsParser\Exceptions\PinNotFound;
 use AK\FunPay\SmsParser\Exceptions\YandexAccountInvalid;
 use AK\FunPay\SmsParser\Exceptions\YandexAccountNotFound;
+use AK\FunPay\SmsParser\Message;
 use AK\FunPay\SmsParser\Parser;
 use PHPUnit\Framework\TestCase;
 
 class ParserTest extends TestCase
 {
     /** @test */
-    public function it_can_get_account(): void
+    public function it_can_get_message(): void
     {
         $message = 'Пароль: 0823<br />Спишется 100,85р.<br />Перевод на счет 410017080996934';
 
         $parser = new Parser($message);
 
-        $this->assertSame('410017080996934', $parser->account());
+        $this->assertInstanceOf(Message::class, $parser->message());
     }
 
     /** @test */
-    public function it_can_get_money_amount(): void
+    public function it_can_get_message_account(): void
     {
         $message = 'Пароль: 0823<br />Спишется 100,85р.<br />Перевод на счет 410017080996934';
 
         $parser = new Parser($message);
 
-        $this->assertSame(100.85, $parser->moneyAmount());
+        $this->assertSame('410017080996934', $parser->message()->account());
     }
 
     /** @test */
-    public function it_can_get_pin(): void
+    public function it_can_get_message_money_amount(): void
     {
         $message = 'Пароль: 0823<br />Спишется 100,85р.<br />Перевод на счет 410017080996934';
 
         $parser = new Parser($message);
 
-        $this->assertSame('0823', $parser->pin());
+        $this->assertSame(100.85, $parser->message()->moneyAmount());
+    }
+
+    /** @test */
+    public function it_can_get_message_pin(): void
+    {
+        $message = 'Пароль: 0823<br />Спишется 100,85р.<br />Перевод на счет 410017080996934';
+
+        $parser = new Parser($message);
+
+        $this->assertSame('0823', $parser->message()->pin());
     }
 
     /** @test */
@@ -59,7 +70,7 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame('410017080996934', $parser->account());
+        $this->assertSame('410017080996934', $parser->message()->account());
     }
 
     /** @test */
@@ -69,7 +80,7 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame(100.85, $parser->moneyAmount());
+        $this->assertSame(100.85, $parser->message()->moneyAmount());
     }
 
     /** @test */
@@ -79,7 +90,7 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame('0823', $parser->pin());
+        $this->assertSame('0823', $parser->message()->pin());
     }
 
     /** @test */
@@ -89,9 +100,9 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame('410017080996934', $parser->account());
-        $this->assertSame(100.85, $parser->moneyAmount());
-        $this->assertSame('0823', $parser->pin());
+        $this->assertSame('410017080996934', $parser->message()->account());
+        $this->assertSame(100.85, $parser->message()->moneyAmount());
+        $this->assertSame('0823', $parser->message()->pin());
     }
 
     /** @test */
@@ -101,9 +112,9 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame('410017080996934', $parser->account());
-        $this->assertSame(100.85, $parser->moneyAmount());
-        $this->assertSame('0823', $parser->pin());
+        $this->assertSame('410017080996934', $parser->message()->account());
+        $this->assertSame(100.85, $parser->message()->moneyAmount());
+        $this->assertSame('0823', $parser->message()->pin());
     }
 
     /** @test */
@@ -113,7 +124,7 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame(100.0, $parser->moneyAmount());
+        $this->assertSame(100.0, $parser->message()->moneyAmount());
     }
 
     /** @test */
@@ -123,7 +134,7 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame(1000.0, $parser->moneyAmount());
+        $this->assertSame(1000.0, $parser->message()->moneyAmount());
     }
 
     /** @test */
@@ -133,7 +144,7 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame(100.85, $parser->moneyAmount());
+        $this->assertSame(100.85, $parser->message()->moneyAmount());
     }
 
     /** @test */
@@ -143,7 +154,7 @@ class ParserTest extends TestCase
 
         $parser = new Parser($message);
 
-        $this->assertSame(100.85, $parser->moneyAmount());
+        $this->assertSame(100.85, $parser->message()->moneyAmount());
     }
 
     /** @test */

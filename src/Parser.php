@@ -15,75 +15,51 @@ namespace AK\FunPay\SmsParser;
 
 use AK\FunPay\SmsParser\Exceptions\MoneyAmountNotFound;
 use AK\FunPay\SmsParser\Exceptions\PinNotFound;
-use AK\FunPay\SmsParser\Exceptions\YandexAccountInvalid;
 use AK\FunPay\SmsParser\Exceptions\YandexAccountNotFound;
 
 class Parser
 {
-    private $account = '';
+    private $message;
 
-    private $moneyAmount = 0.0;
-
-    private $pin = '';
-
-    public function __construct(string $message)
+    public function __construct(string $string)
     {
-        $this->parseAccount($message);
-        $this->parseMoneyAmount($message);
-        $this->parsePin($message);
+        $this->message = new Message(
+            $this->parseAccount($string),
+            $this->parseMoneyAmount($string),
+            $this->parsePin($string)
+        );
     }
 
-    public function account(): string
+    public function message(): Message
     {
-        return $this->account;
+        return $this->message;
     }
 
-    public function moneyAmount(): float
-    {
-        return $this->moneyAmount;
-    }
-
-    public function pin(): string
-    {
-        return $this->pin;
-    }
-
-    private function parseAccount(string $message): void
+    private function parseAccount(string $message): string
     {
         if (preg_match('#(4100\d{8,})#', $message, $matches) !== 1) {
             throw new YandexAccountNotFound($message);
         }
 
-        $account = $matches[1];
-
-        $this->assertYandexAccount($account);
-
-        $this->account = $account;
+        return $matches[1];
     }
 
-    private function parseMoneyAmount(string $message): void
+    private function parseMoneyAmount(string $message): float
     {
         if (preg_match('#(\d+([.,]\d{1,2})?)р(уб)?\.#ui', $message, $matches) !== 1) {
             throw new MoneyAmountNotFound($message);
         }
 
-        $this->moneyAmount = $this->moneyAmountFromString($matches[1]);
+        return $this->moneyAmountFromString($matches[1]);
     }
 
-    private function parsePin(string $message): void
+    private function parsePin(string $message): string
     {
         if (preg_match('#(?<!\d)(\d{4})(?!\d)(?!\w)#u', $message, $matches) !== 1) {
             throw new PinNotFound($message);
         }
 
-        $this->pin = $matches[1];
-    }
-
-    private function assertYandexAccount(string $account): void
-    {
-        if (strlen($account) > 15) {
-            throw new YandexAccountInvalid($account);
-        }
+        return $matches[1];
     }
 
     private function moneyAmountFromString(string $amount): float
