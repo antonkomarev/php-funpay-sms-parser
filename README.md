@@ -3,8 +3,10 @@
 ![ak-php-funpay-sms-parser](https://user-images.githubusercontent.com/1849174/42195292-ec2e0330-7e80-11e8-9069-6046946ccb25.png)
 
 <p align="center">
+<a href="https://github.com/antonkomarev/php-funpay-sms-parser/releases"><img src="https://img.shields.io/github/release/antonkomarev/php-funpay-sms-parser.svg?style=flat-square" alt="Releases"></a>
 <a href="https://travis-ci.org/antonkomarev/php-funpay-sms-parser"><img src="https://img.shields.io/travis/antonkomarev/php-funpay-sms-parser/master.svg?style=flat-square" alt="Build Status"></a>
 <a href="https://styleci.io/repos/139517157"><img src="https://styleci.io/repos/139517157/shield" alt="StyleCI"></a>
+<a href="https://github.com/antonkomarev/php-funpay-sms-parser/blob/master/LICENSE"><img src="https://img.shields.io/github/license/antonkomarev/php-funpay-sms-parser.svg?style=flat-square" alt="License"></a>
 </p>
 
 ## Introduction
