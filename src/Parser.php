@@ -28,7 +28,9 @@ class Parser
 
     public function __construct(string $message)
     {
-        $this->parse($message);
+        $this->parseAccount($message);
+        $this->parseMoneyAmount($message);
+        $this->parsePin($message);
     }
 
     public function account(): string
@@ -44,13 +46,6 @@ class Parser
     public function pin(): string
     {
         return $this->pin;
-    }
-
-    private function parse(string $message): void
-    {
-        $this->parseAccount($message);
-        $this->parseMoneyAmount($message);
-        $this->parsePin($message);
     }
 
     private function parseAccount(string $message): void
