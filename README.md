@@ -39,7 +39,7 @@ $ composer install antonkomarev/php-funpay-sms-parser
 
 ### Standalone
 
-Clone or download project from [PHP FunPay SMS Parser git repository](https://github.com/a-komarev/php-funpay-sms-parser).
+Clone or download project from [PHP FunPay SMS Parser git repository](https://github.com/antonkomarev/php-funpay-sms-parser).
 
 ```sh
 $ git clone git@github.com:antonkomarev/php-funpay-sms-parser.git && cd ./php-funpay-sms-parser
