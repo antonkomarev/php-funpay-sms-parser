@@ -13,6 +13,8 @@
 
 PHP FunPay SMS Parser library allows to parse SMS messages from transaction confirmation gateway.
 
+This package was developed as a part of an FunPay interview, I'm not affiliated with FunPay in any way.
+
 ## Contents
 
 - [Installation](#installation)
@@ -120,5 +122,7 @@ $ vendor/bin/phpunit
 
 ## License
 
-- `PHP FunPay SMS Parser` package is open-sourced software licensed under the [MIT license](LICENSE) by Anton Komarev.
+- `PHP FunPay SMS Parser` package is open-sourced software licensed under the [MIT license](LICENSE) by [Anton Komarev].
 - `Decomposition` image licensed under [Creative Commons 3.0](https://creativecommons.org/licenses/by/3.0/us/) by Arthur Shlain.
+
+[Anton Komarev]: https://komarev.com

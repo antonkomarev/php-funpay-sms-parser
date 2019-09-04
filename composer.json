@@ -13,14 +13,14 @@
   "authors": [
     {
       "name": "Anton Komarev",
-      "email": "a.komarev@cybercog.su",
-      "homepage": "http://ell.folio.su",
+      "email": "anton@komarev.com",
+      "homepage": "https://komarev.com",
       "role": "Developer"
     }
   ],
   "homepage": "https://github.com/antonkomarev/php-funpay-sms-parser",
   "support": {
-    "email": "a.komarev@cybercog.su",
+    "email": "anton@komarev.com",
     "issues": "https://github.com/antonkomarev/php-funpay-sms-parser/issues",
     "wiki": "https://github.com/antonkomarev/php-funpay-sms-parser/wiki",
     "source": "https://github.com/antonkomarev/php-funpay-sms-parser",
@@ -30,7 +30,7 @@
     "php": "^7.1"
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.2"
+    "phpunit/phpunit": "^8.0"
   },
   "autoload": {
     "psr-4": {
